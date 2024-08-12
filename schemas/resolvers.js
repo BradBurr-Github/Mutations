@@ -23,7 +23,8 @@ const resolvers = {
       return await School.create({ name, location, studentCount });
     },
     addClass: async (parent, { name, building, creditHours, professor }) => {
-      return await Class.create({ name, building, creditHours, professor });
+      const result = await Class.create({ name, building, creditHours, professor });
+      console.log(result)
     },
     updateClass: async (parent, { id, building }) => {
       // Find and update the matching class using the destructured args
